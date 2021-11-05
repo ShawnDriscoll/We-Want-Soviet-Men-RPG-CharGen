@@ -1,7 +1,7 @@
 **We Want Soviet Men RPG Character Generator**
 ==============================================
 
-.. figure:: images/efpm.png
+.. figure:: images/wwsm.png
 
 
 **We Want Soviet Men RPG Character Generator** is a Windows program for creating characters using the Total Party Skills system.
