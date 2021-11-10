@@ -35,6 +35,15 @@ class Ui_aboutDialog(object):
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
+        self.bgArtLabel = QtWidgets.QLabel(aboutDialog)
+        self.bgArtLabel.setGeometry(QtCore.QRect(0, 0, 481, 301))
+        self.bgArtLabel.setText("")
+        self.bgArtLabel.setPixmap(QtGui.QPixmap(":/icons/wwsm_dialog.png"))
+        self.bgArtLabel.setObjectName("bgArtLabel")
+        self.bgArtLabel.raise_()
+        self.aboutOKButton.raise_()
+        self.textLabel.raise_()
+        self.line.raise_()
 
         self.retranslateUi(aboutDialog)
         QtCore.QMetaObject.connectSlotsByName(aboutDialog)
@@ -43,4 +52,5 @@ class Ui_aboutDialog(object):
         _translate = QtCore.QCoreApplication.translate
         aboutDialog.setWindowTitle(_translate("aboutDialog", "About WWSM CharGen"))
         self.aboutOKButton.setText(_translate("aboutDialog", "OK"))
-        self.textLabel.setText(_translate("aboutDialog", "<html><head/><body><p><span style=\" font-weight:600;\">WWSM CharGen for Windows 10</span></p><p>Version: Total Party Skills Edition</p><p>Build: 0.0.1 (Beta)</p><p>Produced by Shawn Driscoll. Copyright (C) 2021.</p><p>Visit blog at <a href=\"http://shawndriscoll.blogspot.com\"><span style=\" text-decoration: underline; color:#0000ff;\">shawndriscoll.blogspot.com</span></a><br/>For support, email <a href=\"mailto:shawndriscoll@hotmail.com?subject=WWSM CharGen 0.0.1b\"><span style=\" text-decoration: underline; color:#0000ff;\">shawndriscoll@hotmail.com</span></a></p><p>Qt GUI Toolkit is copyright (C) 2020 The Qt Company Ltd</p><p><br/></p><p>The Planet Matriarchy: We Want Soviet Men RPG was written by R. Joshua Holland. Copyright 2021 - 2022, Total Party Skills.</p></body></html>"))
+        self.textLabel.setText(_translate("aboutDialog", "<html><head/><body><p><span style=\" font-weight:600;\">WWSM CharGen for Windows 10</span></p><p>Version: Total Party Skills Edition</p><p>Build: 0.0.1 (Beta)</p><p>Produced by Shawn Driscoll. Copyright (C) 2021.</p><p>Buy the game at <a href=\"https://www.drivethrurpg.com/product/373183/Planet-Matriarchy-WE-WANT-SOVIET-MEN\"><span style=\" text-decoration: underline; color:#0000ff;\">DriveThruRPG</span></a><br/><br/>Visit blog at <a href=\"http://shawndriscoll.blogspot.com\"><span style=\" text-decoration: underline; color:#0000ff;\">shawndriscoll.blogspot.com</span></a><br/>For support, email <a href=\"mailto:shawndriscoll@hotmail.com?subject=WWSM CharGen 0.0.1b\"><span style=\" text-decoration: underline; color:#0000ff;\">shawndriscoll@hotmail.com</span></a></p><p>Qt GUI Toolkit is copyright (C) 2020 The Qt Company Ltd</p><p><br/></p><p>The Planet Matriarchy: We Want Soviet Men RPG was written by R. Joshua Holland. Copyright 2021 - 2022, Total Party Skills.</p></body></html>"))
+import wwsm_chargen_rc
