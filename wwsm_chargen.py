@@ -227,9 +227,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.bodyScore.setDisabled(True)
             self.mindScore.setDisabled(True)
             self.spiritScore.setDisabled(True)
-            self.healthDisplay.setDisabled(True)
-            self.sanityDisplay.setDisabled(True)
-            self.moraleDisplay.setDisabled(True)
             self.additional1Display.setDisabled(True)
             self.agilitySkill.setDisabled(True)
             self.beautySkill.setDisabled(True)
@@ -365,6 +362,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.additional_skill_points = 12
         self.additional2Display.setText(str(self.additional_skill_points))
+        
+    #   Initialize Movement and Range
+    
+        self.movementDisplay.setText(str(1 + self.bodyScore.value() + self.agilitySkill.value()) + ' spaces')
+        self.rangeDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' miles')
 
     def clearButton_clicked(self):
         '''
@@ -470,7 +472,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.spiritScore.setDisabled(False)
         self.armorDisplay.setPlainText('None')
         self.weaponDisplay.setPlainText('None')
-        self.itemsDisplay.setPlainText('Underwear, small Logbook, NASA ID')
+        self.itemsDisplay.setPlainText(self.starting_items)
         self.specialDisplay.setPlainText('None')
         self.traitsDisplay.setPlainText('')
         self.backstoryDisplay.setPlainText('')
