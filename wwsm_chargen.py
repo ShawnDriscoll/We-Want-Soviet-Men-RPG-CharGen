@@ -22,7 +22,6 @@ import sys
 import os
 import logging
 import json
-#import pprint
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 __app__ = 'WWSM CharGen 0.0.1 (Beta)'
@@ -106,6 +105,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionLoad.triggered.connect(self.loadButton_clicked)
         self.saveButton.clicked.connect(self.saveButton_clicked)
         self.actionSave.triggered.connect(self.saveButton_clicked)
+        self.printButton.clicked.connect(self.printButton_clicked)
+        self.actionPrint.triggered.connect(self.printButton_clicked)
         self.actionVisit_Blog.triggered.connect(self.Visit_Blog)
         self.actionFeedback.triggered.connect(self.Feedback)
         self.actionOverview.triggered.connect(self.Overview_menu)
@@ -131,6 +132,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.telepathySkill.setDisabled(True)
         self.saveButton.setDisabled(True)
         self.actionSave.setDisabled(True)
+        self.printButton.setDisabled(True)
+        self.actionPrint.setDisabled(True)
         self.charnameEdit.setDisabled(True)
         self.ageEdit.setDisabled(True)
         self.genderEdit.setDisabled(True)
@@ -220,6 +223,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.actionSave.setDisabled(True)
             self.loadButton.setDisabled(True)
             self.actionLoad.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
             self.actionVisit_Blog.setDisabled(True)
             self.actionFeedback.setDisabled(True)
             self.actionOverview.setDisabled(True)
@@ -675,6 +680,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def beautySkill_valueChanged(self):
         '''
@@ -712,6 +719,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
 
     def strengthSkill_valueChanged(self):
         '''
@@ -751,6 +760,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def knowledgeSkill_valueChanged(self):
         '''
@@ -788,6 +799,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def perceptionSkill_valueChanged(self):
         '''
@@ -825,6 +838,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def technologySkill_valueChanged(self):
         '''
@@ -862,6 +877,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
         
     def charismaSkill_valueChanged(self):
         '''
@@ -899,6 +916,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def empathySkill_valueChanged(self):
         '''
@@ -936,6 +955,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def focusSkill_valueChanged(self):
         '''
@@ -973,6 +994,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def boxingSkill_valueChanged(self):
         '''
@@ -1010,6 +1033,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def meleeSkill_valueChanged(self):
         '''
@@ -1047,6 +1072,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def rangedSkill_valueChanged(self):
         '''
@@ -1084,6 +1111,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def artSkill_valueChanged(self):
         '''
@@ -1121,6 +1150,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def languagesSkill_valueChanged(self):
         '''
@@ -1158,6 +1189,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def scienceSkill_valueChanged(self):
         '''
@@ -1195,6 +1228,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def clairvoyanceSkill_valueChanged(self):
         '''
@@ -1232,6 +1267,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def psychokinesisSkill_valueChanged(self):
         '''
@@ -1269,6 +1306,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def telepathySkill_valueChanged(self):
         '''
@@ -1306,6 +1345,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rewardDisplay.setText('None')
             self.saveButton.setDisabled(True)
             self.actionSave.setDisabled(True)
+            self.printButton.setDisabled(True)
+            self.actionPrint.setDisabled(True)
     
     def deptBox_changed(self):
         '''
@@ -1526,6 +1567,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.notesDisplay.setPlainText(self.char_data['NOTES'])
                 self.saveButton.setDisabled(False)
                 self.actionSave.setDisabled(False)
+                self.printButton.setDisabled(False)
+                self.actionPrint.setDisabled(False)
 
     def saveButton_clicked(self):
         '''
@@ -1582,7 +1625,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             json.dump(self.char_data, json_file_out, ensure_ascii=True)
             json_file_out.close()
             log.info('Character saved as ' + self.charnameEdit.text() + self.file_extension + ' in file format ' + str(self.file_format))
+            self.printButton.setDisabled(False)
+            self.actionPrint.setDisabled(False)
             self.popSaveDialog.show()
+    
+    def printButton_clicked(self):
+        '''
+        Print the character as a PDF.
+        '''
+        print('Printing as PDF...')
 
     def Visit_Blog(self):
         '''
