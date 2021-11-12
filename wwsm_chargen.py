@@ -1,13 +1,13 @@
 #
-#   Python Total Party Skills Character Generator
+#   We Want Soviet Men! Character Generator
 #
-########################################################
+#############################################
 
 """
 WWSM Chargen 0.0.1 Beta
 -----------------------------------------------------------------------
 
-This program generates characters for the Total Party Skills RPG.
+This program generates characters for the We Want Soviet Men! RPG.
 """
 
 from PyQt5.QtCore import *
@@ -22,6 +22,7 @@ import sys
 import os
 import logging
 import json
+from fpdf import FPDF
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 __app__ = 'WWSM CharGen 0.0.1 (Beta)'
@@ -193,6 +194,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.char_xp = 0
 
+        self.game_name = 'WE WANT SOVIET MEN!'
         self.char_folder = 'We Want Soviet Men Characters'
         self.file_extension = '.tps'
         self.file_format = 1.2
@@ -1634,6 +1636,154 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Print the character as a PDF.
         '''
         print('Printing as PDF...')
+        pdf = FPDF(orientation='P', unit='in', format='Letter')
+        pdf.add_page()
+        pdf.image(name=CURRENT_DIR + '\\wwsm_logo.png')
+        pdf.add_font(family='Comic Sans MS', style='', fname=r'C:\Windows\Fonts\comic.ttf', uni='True')
+        pdf.add_font(family='Comic Sans MS', style='B', fname=r'C:\Windows\Fonts\comicbd.ttf', uni='True')
+        pdf.set_font('Comic Sans MS', 'B', 20)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt=self.game_name, ln=1)
+        pdf.cell(txt='CHARACTER LOGBOOK', ln=1)
+        pdf.set_font('Comic Sans MS', '', 16)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='Name: ' + self.charnameEdit.text(), ln=1)
+        pdf.cell(txt='Age: ' + self.ageEdit.text(), ln=1)
+        pdf.cell(txt='Gender: ' + self.genderEdit.text(), ln=1)
+        pdf.cell(txt='Dept: ' + self.dept_chosen, ln=1)
+        pdf.cell(txt='Rank: ' + self.rankDisplay.text(), ln=1)
+        pdf.cell(txt='Level: ' + str(self.char_level) + '    XP: ' + str(self.char_xp), ln=1)
+        pdf.cell(txt=' ', ln=1)
+        pdf.set_font('Comic Sans MS', '', 22)
+        pdf.cell(txt='BODY: ' + str(self.bodyScore.value()), ln=1)
+        pdf.cell(txt='MIND: ' + str(self.mindScore.value()), ln=1)
+        pdf.cell(txt='SPIRIT: ' + str(self.spiritScore.value()), ln=1)
+        pdf.cell(txt='HEALTH: ' + str(self.healthDisplay.text()), ln=1)
+        pdf.cell(txt='SANITY: ' + str(self.sanityDisplay.text()), ln=1)
+        pdf.cell(txt='MORALE: ' + str(self.moraleDisplay.text()), ln=1)
+        pdf.set_font('Comic Sans MS', '', 16)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='      Body Skills', ln=1)
+        pdf.cell(txt='Agility: ' + str(self.agilitySkill.value()), ln=1)
+        pdf.cell(txt='Beauty: ' + str(self.beautySkill.value()), ln=1)
+        pdf.cell(txt='Strength: ' + str(self.strengthSkill.value()), ln=1)
+        pdf.cell(txt='      Mind Skills', ln=1)
+        pdf.cell(txt='Knowledge: ' + str(self.knowledgeSkill.value()), ln=1)
+        pdf.cell(txt='Perception: ' + str(self.perceptionSkill.value()), ln=1)
+        pdf.cell(txt='Technology: ' + str(self.technologySkill.value()), ln=1)
+        pdf.cell(txt='      Spirit Skills', ln=1)
+        pdf.cell(txt='Charisma: ' + str(self.charismaSkill.value()), ln=1)
+        pdf.cell(txt='Empathy: ' + str(self.empathySkill.value()), ln=1)
+        pdf.cell(txt='Focus: ' + str(self.focusSkill.value()), ln=1)
+        pdf.cell(txt='      Combat Skills', ln=1)
+        pdf.cell(txt='Boxing: ' + str(self.boxingSkill.value()), ln=1)
+        pdf.cell(txt='Melee: ' + str(self.meleeSkill.value()), ln=1)
+        pdf.cell(txt='Ranged: ' + str(self.rangedSkill.value()), ln=1)
+        pdf.add_page()
+        pdf.set_font('Comic Sans MS', '', 10)
+        pdf.cell(txt=self.game_name + '   ...continuing with character: ' + self.charnameEdit.text(), ln=1)
+        pdf.set_font('Comic Sans MS', '', 16)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='      Strange Skills', ln=1)
+        pdf.cell(txt='Art: ' + str(self.artSkill.value()), ln=1)
+        pdf.cell(txt='Languages: ' + str(self.languagesSkill.value()), ln=1)
+        pdf.cell(txt='Science: ' + str(self.scienceSkill.value()), ln=1)
+        pdf.cell(txt='      Psionic Skills', ln=1)
+        pdf.cell(txt='Clairvoyance: ' + str(self.clairvoyanceSkill.value()), ln=1)
+        pdf.cell(txt='Psychokinesis: ' + str(self.psychokinesisSkill.value()), ln=1)
+        pdf.cell(txt='Telepathy: ' + str(self.telepathySkill.value()), ln=1)
+        pdf.set_font('Comic Sans MS', '', 18)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='ARMOR:', ln=1)
+        pdf.set_font('Comic Sans MS', '', 14)
+        pdf.cell(txt=self.armorDisplay.toPlainText(), ln=1)
+        pdf.set_font('Comic Sans MS', '', 18)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='WEAPON:', ln=1)
+        pdf.set_font('Comic Sans MS', '', 14)
+        pdf.cell(txt=self.weaponDisplay.toPlainText(), ln=1)
+        pdf.set_font('Comic Sans MS', '', 18)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='ITEMS:', ln=1)
+        pdf.set_font('Comic Sans MS', '', 14)
+        some_text = self.itemsDisplay.toPlainText()
+        some_text = some_text.split()
+        while len(some_text) > 0:
+            some_words = ''
+            if len(some_text) > 14:
+                for i in range(14):
+                    some_words += some_text[i] + ' '
+                pdf.cell(txt=some_words, ln=1)
+                some_text = some_text[14:]
+            else:
+                for i in range(len(some_text)):
+                    some_words += some_text[i] + ' '
+                pdf.cell(txt=some_words, ln=1)
+                some_text = ''
+        pdf.set_font('Comic Sans MS', '', 18)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='SPECIAL:', ln=1)
+        pdf.set_font('Comic Sans MS', '', 14)
+        pdf.cell(txt=self.specialDisplay.toPlainText(), ln=1)
+        pdf.set_font('Comic Sans MS', '', 18)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='PERSONALITY / APPEARANCE:', ln=1)
+        pdf.set_font('Comic Sans MS', '', 14)
+        some_text = self.traitsDisplay.toPlainText()
+        some_text = some_text.split()
+        while len(some_text) > 0:
+            some_words = ''
+            if len(some_text) > 14:
+                for i in range(14):
+                    some_words += some_text[i] + ' '
+                pdf.cell(txt=some_words, ln=1)
+                some_text = some_text[14:]
+            else:
+                for i in range(len(some_text)):
+                    some_words += some_text[i] + ' '
+                pdf.cell(txt=some_words, ln=1)
+                some_text = ''
+        pdf.set_font('Comic Sans MS', '', 18)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='BACKSTORY:', ln=1)
+        pdf.set_font('Comic Sans MS', '', 14)
+        some_text = self.backstoryDisplay.toPlainText()
+        some_text = some_text.split()
+        while len(some_text) > 0:
+            some_words = ''
+            if len(some_text) > 14:
+                for i in range(14):
+                    some_words += some_text[i] + ' '
+                pdf.cell(txt=some_words, ln=1)
+                some_text = some_text[14:]
+            else:
+                for i in range(len(some_text)):
+                    some_words += some_text[i] + ' '
+                pdf.cell(txt=some_words, ln=1)
+                some_text = ''
+        pdf.set_font('Comic Sans MS', '', 18)
+        pdf.cell(txt=' ', ln=1)
+        pdf.cell(txt='NOTES:', ln=1)
+        pdf.set_font('Comic Sans MS', '', 14)
+        some_text = self.notesDisplay.toPlainText()
+        some_text = some_text.split()
+        while len(some_text) > 0:
+            some_words = ''
+            if len(some_text) > 14:
+                for i in range(14):
+                    some_words += some_text[i] + ' '
+                pdf.cell(txt=some_words, ln=1)
+                some_text = some_text[14:]
+            else:
+                for i in range(len(some_text)):
+                    some_words += some_text[i] + ' '
+                pdf.cell(txt=some_words, ln=1)
+                some_text = ''
+
+        pdf.output(self.char_folder + '/' + self.charnameEdit.text() + '.pdf')
+        log.info('Character printed as ' + self.charnameEdit.text() + '.pdf')
 
     def Visit_Blog(self):
         '''
