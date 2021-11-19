@@ -4,7 +4,7 @@
 #############################################
 
 """
-WWSM Chargen 0.0.1 Beta
+WWSM Chargen 0.0.2 Beta
 -----------------------------------------------------------------------
 
 This program generates characters for the We Want Soviet Men! RPG.
@@ -14,10 +14,10 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import time
-from mainwindow_001b import Ui_MainWindow
-from aboutdialog_001b import Ui_aboutDialog
-from alertdialog_001b import Ui_alertDialog
-from savedialog_001b import Ui_saveDialog
+from mainwindow_002b import Ui_MainWindow
+from aboutdialog_002b import Ui_aboutDialog
+from alertdialog_002b import Ui_alertDialog
+from savedialog_002b import Ui_saveDialog
 import sys
 import os
 import logging
@@ -25,8 +25,8 @@ import json
 from fpdf import FPDF
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'WWSM CharGen 0.0.1 (Beta)'
-__version__ = '0.0.1b'
+__app__ = 'WWSM CharGen 0.0.2 (Beta)'
+__version__ = '0.0.2b'
 __expired_tag__ = False
 
 class aboutDialog(QDialog, Ui_aboutDialog):
@@ -371,7 +371,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.additional2Display.setText(str(self.additional_skill_points))
         
     #   Initialize Movement and Range
-    
+
+        self.encumbranceDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' items')
         self.movementDisplay.setText(str(1 + self.bodyScore.value() + self.agilitySkill.value()) + ' spaces')
         self.rangeDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' miles')
 
@@ -494,6 +495,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         A Body Score was entered.
         Add/substract from additional Attribute points.
         '''
+        self.encumbranceDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' items')
         self.movementDisplay.setText(str(1 + self.bodyScore.value() + self.agilitySkill.value()) + ' spaces')
         self.rangeDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' miles')
         self.additional_attribute_points += self.tempbodyScore - self.bodyScore.value()
@@ -649,6 +651,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         An Agility Skill was entered.
         Add/substract from additional Skill points.
         '''
+        self.encumbranceDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' items')
         self.movementDisplay.setText(str(1 + self.bodyScore.value() + self.agilitySkill.value()) + ' spaces')
         self.rangeDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' miles')
         self.additional_skill_points += self.tempagilitySkill - self.agilitySkill.value()
@@ -729,6 +732,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         A Strength Skill was entered.
         Add/substract from additional Skill points.
         '''
+        self.encumbranceDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' items')
         self.movementDisplay.setText(str(1 + self.bodyScore.value() + self.agilitySkill.value()) + ' spaces')
         self.rangeDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' miles')
         self.additional_skill_points += self.tempstrengthSkill - self.strengthSkill.value()
@@ -1549,14 +1553,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.additional2Display.setText('0')
                 self.rewardDisplay.setText(self.char_data['Reward'])
                 if int(self.healthDisplay.text()) > 1:
+                    self.encumbranceDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' items')
                     self.movementDisplay.setText(str(1 + self.bodyScore.value() + self.agilitySkill.value()) + ' spaces')
                     self.rangeDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' miles')
                     log.debug('Character can move fine.')
                 elif int(self.healthDisplay.text()) == 1:
+                    self.encumbranceDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' items')
                     self.movementDisplay.setText('<span style=" color:#ff0000;">' + str((1 + self.bodyScore.value() + self.agilitySkill.value()) // 2) + ' spaces</span>')
                     self.rangeDisplay.setText('<span style=" color:#ff0000;">' + str((1 + self.bodyScore.value() + self.strengthSkill.value()) // 2) + ' miles</span>')
                     log.debug("Character's movement is cut in half.")
                 elif int(self.healthDisplay.text()) < 1:
+                    self.encumbranceDisplay.setText(str(1 + self.bodyScore.value() + self.strengthSkill.value()) + ' items')
                     self.movementDisplay.setText('<span style=" color:#ff0000;">0 spaces</span>')
                     self.rangeDisplay.setText('<span style=" color:#ff0000;">0 miles</span>')
                     log.debug("Character can't move.")
