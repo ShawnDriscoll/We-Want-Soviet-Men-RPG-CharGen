@@ -521,9 +521,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.artSkill.setDisabled(False)
             self.languagesSkill.setDisabled(False)
             self.scienceSkill.setDisabled(False)
-            self.clairvoyanceSkill.setDisabled(False)
-            self.psychokinesisSkill.setDisabled(False)
-            self.telepathySkill.setDisabled(False)
+            #self.clairvoyanceSkill.setDisabled(False)
+            #self.psychokinesisSkill.setDisabled(False)
+            #self.telepathySkill.setDisabled(False)
         else:
             self.agilitySkill.setDisabled(True)
             self.beautySkill.setDisabled(True)
@@ -540,9 +540,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.artSkill.setDisabled(True)
             self.languagesSkill.setDisabled(True)
             self.scienceSkill.setDisabled(True)
-            self.clairvoyanceSkill.setDisabled(True)
-            self.psychokinesisSkill.setDisabled(True)
-            self.telepathySkill.setDisabled(True)
+            #self.clairvoyanceSkill.setDisabled(True)
+            #self.psychokinesisSkill.setDisabled(True)
+            #self.telepathySkill.setDisabled(True)
 
     def mindScore_valueChanged(self):
         '''
@@ -572,9 +572,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.artSkill.setDisabled(False)
             self.languagesSkill.setDisabled(False)
             self.scienceSkill.setDisabled(False)
-            self.clairvoyanceSkill.setDisabled(False)
-            self.psychokinesisSkill.setDisabled(False)
-            self.telepathySkill.setDisabled(False)
+            # self.clairvoyanceSkill.setDisabled(False)
+            # self.psychokinesisSkill.setDisabled(False)
+            # self.telepathySkill.setDisabled(False)
         else:
             self.agilitySkill.setDisabled(True)
             self.beautySkill.setDisabled(True)
@@ -591,9 +591,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.artSkill.setDisabled(True)
             self.languagesSkill.setDisabled(True)
             self.scienceSkill.setDisabled(True)
-            self.clairvoyanceSkill.setDisabled(True)
-            self.psychokinesisSkill.setDisabled(True)
-            self.telepathySkill.setDisabled(True)
+            # self.clairvoyanceSkill.setDisabled(True)
+            # self.psychokinesisSkill.setDisabled(True)
+            # self.telepathySkill.setDisabled(True)
 
     def spiritScore_valueChanged(self):
         '''
@@ -623,9 +623,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.artSkill.setDisabled(False)
             self.languagesSkill.setDisabled(False)
             self.scienceSkill.setDisabled(False)
-            self.clairvoyanceSkill.setDisabled(False)
-            self.psychokinesisSkill.setDisabled(False)
-            self.telepathySkill.setDisabled(False)
+            # self.clairvoyanceSkill.setDisabled(False)
+            # self.psychokinesisSkill.setDisabled(False)
+            # self.telepathySkill.setDisabled(False)
         else:
             self.agilitySkill.setDisabled(True)
             self.beautySkill.setDisabled(True)
@@ -642,9 +642,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.artSkill.setDisabled(True)
             self.languagesSkill.setDisabled(True)
             self.scienceSkill.setDisabled(True)
-            self.clairvoyanceSkill.setDisabled(True)
-            self.psychokinesisSkill.setDisabled(True)
-            self.telepathySkill.setDisabled(True)
+            # self.clairvoyanceSkill.setDisabled(True)
+            # self.psychokinesisSkill.setDisabled(True)
+            # self.telepathySkill.setDisabled(True)
     
     def agilitySkill_valueChanged(self):
         '''
