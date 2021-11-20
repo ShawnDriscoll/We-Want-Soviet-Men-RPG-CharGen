@@ -1381,9 +1381,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.artSkill.setDisabled(False)
             self.languagesSkill.setDisabled(False)
             self.scienceSkill.setDisabled(False)
-            self.clairvoyanceSkill.setDisabled(False)
-            self.psychokinesisSkill.setDisabled(False)
-            self.telepathySkill.setDisabled(False)
+            self.clairvoyanceSkill.setDisabled(True)
+            self.psychokinesisSkill.setDisabled(True)
+            self.telepathySkill.setDisabled(True)
             self.additional_skill_points = 0
             self.additional2Display.setText(str(self.additional_skill_points))
             self.department_not_chosen = True
