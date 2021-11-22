@@ -176,7 +176,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.deptBox.addItem(i)
         self.deptBox.setCurrentIndex(0)
         self.deptBox.currentIndexChanged.connect(self.deptBox_changed)
-        self.dept_choice = ['Choose', 'Fitness', 'Mechanics', 'Counseling', 'Compliance', 'Propaganda', 'Espionage', 'Custodial', 'Medicine', 'Politics', 'Military', 'Academics', 'Telepathics']
         self.dept_rank = 'Comrade'
         self.dept_skill = ['', 'Body', 'Mind', 'Spirit', 'Combat', 'Strange', 'Psionic', 'Body', 'Mind', 'Spirit', 'Combat', 'Strange', 'Psionic']
         self.dept_item = ['', 'First Aid Spray', 'Toolkit', 'Therapy Goggles', 'Baton', 'Video Drone', 'Stunner Pistol', 'Mop + Bucket', 'Bioscanner', 'Extra Ration Card', 'Stunner Rifle', 'Computer Watch', 'Psychic ID Card']
