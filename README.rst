@@ -10,7 +10,7 @@
 Notes
 -----
 
-**We Want Soviet Men RPG Character Generator** is being developed using Python 3.9.7 and PyQt5.
+**We Want Soviet Men RPG Character Generator** is being developed using Python 3.11.4 and PyQt5.
 
 .. figure:: images/wwsm_chargen.png
 
@@ -20,38 +20,75 @@ Requirements
 
 * **Windows 10**
 
-   It might not work in OSX or Linux.
+   It has not been tested in Windows 11.
 
-* **Python 3.9.7**
+* **Python 3.11.4**
    
    This code was written using the C implementation of Python
-   version 3.9.7. Also known as CPython.
+   version 3.11.4. Also known as CPython.
    
-* **PyQt5 5.15.4**
+* **PyQt5 5.15.9**
 
    PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
-* **fpdf2 2.4.5**
+* **fpdf2 2.7.5**
 
    Fpdf2 is needed for printing the character sheets.
-   
 
-Warning
--------
-
-This code will not work with **Python 2.7-**.
 
 
 Not Using Python?
 -----------------
 
-You can always run the .EXE version for Windows 10 if you don't have the Python language installed. The .EXE version does not create PDFs
-at this time.
+You can always run the .EXE version for Windows 10 if you don't have the Python language installed.
+
+.. |ss| raw:: html
+
+    <strike>
+
+.. |se| raw:: html
+
+    </strike>
+
+Things To-Do
+------------
+
+| Continue unifying the skills across all TPS genres.
+| Instruction manual.
+| Cheat codes.
+|ss|
+
+| Fix PDF charsheet creation for EXE version.
+| Fix psionic-checking when leveling up character.
+| Move PDF character sheets closer to program folder.
+| Add Encumbrance rules from Rocket Cadets in the 11th Dimension!
+| Start on a To-Do.
+
+|se|
+
+**Known History**
+
+* v0.1.1b
+
+  Updated to fpdf2 2.7.5.
+
+  PDF charsheets can now be created in EXE version.
+
+  Updated to Python 3.11.4.
+
+* v0.0.2b
+
+  Psionic check fix during chargen.
+
+* v0.0.1b
+
+  Initial release.
 
 
 The We Want Soviet Men RPG was written by R. Joshua Holland.
 Copyright 2021 - 2022, Total Party Skills.
 https://www.drivethrurpg.com/product/373183/Planet-Matriarchy-WE-WANT-SOVIET-MEN
+
 
 Contact
 -------
