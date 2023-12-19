@@ -20,20 +20,20 @@ Requirements
 
 * **Windows 11**
 
-   It will also run in Windows 10.
+  It will also run in Windows 10.
 
 * **Python 3.11.6**
-   
-   This code was written using the C implementation of Python
-   version 3.11.6. Also known as CPython.
-   
+
+  This code was written using the C implementation of Python
+  version 3.11.6. Also known as CPython.
+
 * **PyQt5 5.15.9**
 
-   PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
+  PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
 * **fpdf2 2.7.5**
 
-   Fpdf2 is needed for printing the character sheets.
+  Fpdf2 is needed for printing the character sheets.
 
 
 
